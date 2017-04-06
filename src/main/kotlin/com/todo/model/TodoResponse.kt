@@ -1,4 +1,5 @@
 package com.todo.model
 
-class TodoResponse {
-}
+data class TodoResponse(val id: String,
+                        val name: String,
+                        val description: String)
