@@ -1,10 +1,12 @@
-package com.todo
+package com.demo.todo
 
-import com.todo.model.Todo
-import com.todo.model.TodoRequest
-import com.todo.model.TodoResponse
+import com.demo.todo.model.Todo
+import com.demo.todo.model.TodoRequest
+import com.demo.todo.model.TodoResponse
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
+import org.springframework.http.ResponseEntity.notFound
+import org.springframework.http.ResponseEntity.status
 import org.springframework.web.bind.annotation.*
 
 @RestController
@@ -14,14 +16,14 @@ open class TodoController(val service: TodoService) {
     @PostMapping
     fun createTodo(@RequestBody request: TodoRequest): ResponseEntity<TodoResponse> {
         val todo = service.saveTodo(Todo.fromRequestToEntity(request))
-        return ResponseEntity.status(HttpStatus.OK).body(Todo.fromEntityToResponse(todo))
+        return status(HttpStatus.OK).body(Todo.fromEntityToResponse(todo))
     }
 
     @GetMapping("/{uuid}")
     fun getTodo(@PathVariable("uuid") id: String): ResponseEntity<TodoResponse> {
-        val todo = service.findTodo(id)?.let { it } ?: return ResponseEntity.notFound().build()
-        return ResponseEntity.status(HttpStatus.OK).body(Todo.fromEntityToResponse(todo))
+        return service.findTodo(id)?.let { todo -> status(HttpStatus.OK).body(Todo.fromEntityToResponse(todo)) } ?: notFound().build()
     }
+
 }
 
 

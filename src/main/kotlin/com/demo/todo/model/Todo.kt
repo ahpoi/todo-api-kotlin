@@ -1,4 +1,4 @@
-package com.todo.model
+package com.demo.todo.model
 
 import java.util.*
 import javax.persistence.Entity

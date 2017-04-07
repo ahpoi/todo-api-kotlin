@@ -1,6 +1,6 @@
-package com.todo
+package com.demo.todo
 
-import com.todo.model.Todo
+import com.demo.todo.model.Todo
 import org.springframework.stereotype.Component
 
 @Component

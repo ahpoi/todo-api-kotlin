@@ -1,4 +1,4 @@
-package com.todo.model
+package com.demo.todo.model
 
 import com.fasterxml.jackson.annotation.JsonProperty
 
