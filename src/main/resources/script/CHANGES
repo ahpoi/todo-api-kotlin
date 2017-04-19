@@ -1,0 +1,9 @@
+Version 0.1.0
+ - Incrementing version number to v1.0.0
+ - Incrementing version number to v1.0.0
+ - Incrementing version number to v1.0.0
+ - Refactor package structure
+ - Using let to check for null entity for the getTodo endpoint
+ - Implemented TodoResponse instead of returning TodoEntity as response object
+ - Initial commit
+
