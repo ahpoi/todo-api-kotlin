@@ -14,16 +14,16 @@ data class Todo(@Id @GeneratedValue(strategy = GenerationType.AUTO) val id: Long
                 val createdAt: Long) {
 
     companion object {
-        fun fromRequestToEntity(request: TodoRequest) = Todo(
+        fun fromRequestDto(request: TodoDtoRequest) = Todo(
                 uuid = UUID.randomUUID().toString(),
                 name = request.name,
                 description = request.description,
                 createdAt = System.currentTimeMillis())
-
-        fun fromEntityToResponse(todo: Todo) = TodoResponse(
-                id = todo.uuid,
-                name = todo.name,
-                description = todo.description)
     }
+
+    fun toResponseDto() = TodoDtoResponse(
+            id = this.uuid,
+            name = this.name,
+            description = this.description)
 
 }
