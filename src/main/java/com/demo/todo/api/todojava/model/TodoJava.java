@@ -1,7 +1,5 @@
 package com.demo.todo.api.todojava.model;
 
-import com.sun.tools.javac.comp.Todo;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

@@ -13,6 +13,6 @@ interface TodoRepository extends CrudRepository<TodoJava, Long> {
 
     Optional<TodoJava> findTodoJavaById(Long id);
 
-    Stream<TodoJava> streamAll();
+    List<TodoJava> findAll();
 
 }

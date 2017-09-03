@@ -2,11 +2,9 @@ package com.demo.todo.api.todojava;
 
 import com.demo.todo.api.notification.MessageService;
 import com.demo.todo.api.todojava.model.TodoJava;
-import com.sun.tools.javac.comp.Todo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
@@ -34,7 +32,7 @@ public class TodoServiceJava {
     }
 
     public Stream<TodoJava> findTodos() {
-        return todoRepository.streamAll();
+        return todoRepository.findAll().stream();
     }
 
 }
