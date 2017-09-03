@@ -1,4 +1,6 @@
-package com.demo.todojava.model;
+package com.demo.todo.api.todojava.model;
+
+import com.sun.tools.javac.comp.Todo;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,7 +24,7 @@ public class TodoJava {
     public TodoJava() {
     }
 
-    private TodoJava(String name, String description, Long createdAt) {
+    public TodoJava(String name, String description, Long createdAt) {
         this.name = name;
         this.description = description;
         this.createdAt = createdAt;
@@ -49,13 +51,13 @@ public class TodoJava {
     }
 
     public static TodoJava fromDtoRequest(TodoJavaDtoRequest request) {
-        return new Builder()
+        return new TodoBuilder()
                 .withCreatedAt(System.currentTimeMillis())
                 .withName(request.getName())
                 .withDescription(request.getDescription()).build();
     }
 
-    public static final class Builder {
+    public static final class TodoBuilder {
 
         private String name;
 
@@ -63,17 +65,17 @@ public class TodoJava {
 
         private Long createdAt;
 
-        public Builder withName(String name) {
+        public TodoBuilder withName(String name) {
             this.name = name;
             return this;
         }
 
-        public Builder withDescription(String description) {
+        public TodoBuilder withDescription(String description) {
             this.description = description;
             return this;
         }
 
-        public Builder withCreatedAt(Long createdAt) {
+        public TodoBuilder withCreatedAt(Long createdAt) {
             this.createdAt = createdAt;
             return this;
         }

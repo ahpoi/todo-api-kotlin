@@ -1,4 +1,4 @@
-package com.demo.todo.model
+package com.demo.todo.api.todo.model
 
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue

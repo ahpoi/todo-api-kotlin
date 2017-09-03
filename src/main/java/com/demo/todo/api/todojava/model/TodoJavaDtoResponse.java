@@ -1,4 +1,4 @@
-package com.demo.todojava.model;
+package com.demo.todo.api.todojava.model;
 
 public class TodoJavaDtoResponse {
 

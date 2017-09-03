@@ -1,4 +1,4 @@
-package com.demo.notification;
+package com.demo.todo.api.notification;
 
 public interface MessageService {
 

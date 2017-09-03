@@ -1,8 +1,8 @@
-package com.demo.todo
+package com.demo.todo.api.todo
 
-import com.demo.todo.model.TodoKotlin
-import com.demo.todo.model.TodoKotlinDtoRequest
-import com.demo.todo.model.TodoKotlinDtoResponse
+import com.demo.todo.api.todo.model.TodoKotlin
+import com.demo.todo.api.todo.model.TodoKotlinDtoRequest
+import com.demo.todo.api.todo.model.TodoKotlinDtoResponse
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.http.ResponseEntity.notFound

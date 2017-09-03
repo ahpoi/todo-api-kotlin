@@ -1,4 +1,4 @@
-package com.demo.todojava.model;
+package com.demo.todo.api.todojava.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;

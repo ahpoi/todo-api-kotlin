@@ -1,11 +1,14 @@
-package com.demo.todojava;
+package com.demo.todo.api.todojava;
 
-import com.demo.notification.MessageService;
-import com.demo.todojava.model.TodoJava;
+import com.demo.todo.api.notification.MessageService;
+import com.demo.todo.api.todojava.model.TodoJava;
+import com.sun.tools.javac.comp.Todo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 @Service
 public class TodoServiceJava {
@@ -22,12 +25,16 @@ public class TodoServiceJava {
     }
 
     public TodoJava saveTodo(TodoJava todo) {
-        messageService.sendMessage("41111111", todo.getName());
+        messageService.sendMessage("0441111111", todo.getName());
         return todoRepository.save(todo);
     }
 
     public Optional<TodoJava> findTodo(Long id) {
         return todoRepository.findTodoJavaById(id);
+    }
+
+    public Stream<TodoJava> findTodos() {
+        return todoRepository.streamAll();
     }
 
 }

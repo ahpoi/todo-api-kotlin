@@ -1,4 +1,4 @@
-package com.demo.notification;
+package com.demo.todo.api.notification;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
